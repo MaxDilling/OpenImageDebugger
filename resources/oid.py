@@ -122,13 +122,20 @@ def main():
         parser.add_argument('--test',
                             help='Open a test window with sample buffers',
                             action='store_true')
+        parser.add_argument('--show', '-s', metavar='file', nargs='+', dest='files',
+                            help='Open a window and show buffers from the filesystem.\
+                                    Supports images and .mat/.bin files')
         args = parser.parse_args()
     except:
+        return
         pass
 
     if args is not None and args.test:
         # Test application
         oidtest(script_path)
+    elif args is not None and args.files:
+        oidshowfile(script_path, args.files)
+    
     else:
         # Setup GDB interface
         debugger = get_debugger_bridge()
