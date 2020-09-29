@@ -20,6 +20,7 @@ sys.path.append(script_path)
 # Load dependency modules
 from oidscripts.oidwindow import OpenImageDebuggerWindow
 from oidscripts.test import oidtest
+from oidscripts.showfile import oidshowfile
 from oidscripts.debuggers.interfaces import BridgeInterface
 from oidscripts.events import OpenImageDebuggerEvents
 
